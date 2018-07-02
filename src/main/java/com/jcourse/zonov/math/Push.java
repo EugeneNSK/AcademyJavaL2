@@ -20,7 +20,7 @@ public class Push extends Command {
             stack.push(d);
         }
         catch (ArrayIndexOutOfBoundsException e1) {
-            throw new CalcException("Push");
+            throw new CalcException("Push: variable not defined");
         }
         catch (NumberFormatException e2) {
             System.out.println("Не double, а string");
@@ -28,10 +28,10 @@ public class Push extends Command {
                 stack.push(map.get(tokens[1]));
             }
             else{
-                throw new CalcException("Wrong Push value");
+                throw new CalcException("Push: Wrong value");
             }
         }
-        System.out.println("Стэк: " + stack);
+        System.out.println("Стэк после добавления переменных: " + stack);
     }
 
 }

@@ -20,10 +20,10 @@ public class Define extends Command {
             map.put(key, val);
         }
         catch (ArrayIndexOutOfBoundsException ex1){
-            throw new CalcException("Define");
+            throw new CalcException("Define: Переменная не определена");
         }
         catch (NumberFormatException ex2){
-            throw new CalcException("Define");
+            throw new CalcException("Define: Значение переменной указано неверно");
 
         }
     }

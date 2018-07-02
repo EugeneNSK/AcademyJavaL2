@@ -1,7 +1,6 @@
 package com.jcourse.zonov.math;
 
 import com.jcourse.zonov.exception.CalcException;
-import java.util.EmptyStackException;
 
 // Вычитание
 public class Minus extends Command {
@@ -9,15 +8,15 @@ public class Minus extends Command {
     @Override
     public void execute() throws CalcException {
 
-        try {
+        if (stack.size()>=2){
             double razn = -stack.pop();
             razn += stack.pop();
             stack.push(razn);
 
             System.out.println("Stack после вычитания :" + stack);
         }
-        catch (EmptyStackException e){
-            throw new CalcException("Empty stack by Minus");
+        else{
+            throw new CalcException("Minus: not enough stack");
         }
     }
 }

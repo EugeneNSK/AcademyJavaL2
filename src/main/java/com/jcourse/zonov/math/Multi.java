@@ -11,14 +11,14 @@ public class Multi extends Command {
 
         double mult=1;
 
-        try {
+        if (stack.size()>=2){
             for (int i=0; i<2; i++){
                 mult*= stack.pop();
             }
             stack.push(mult);
         }
-        catch (EmptyStackException e){
-            throw new CalcException("Empty stack by Minus");
+        else{
+            throw new CalcException("Empty stack by Multi");
         }
 
         System.out.println("Stack после умножения :" +stack);
